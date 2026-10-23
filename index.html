@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Photo Finder</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Fraunces:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+
+    <header>
+      <h1>Photo Finder</h1>
+      <p class="tagline">Can't find that one picture? Just describe it.</p>
+    </header>
+
+    <section class="panel">
+      <h2>1. Pick your photos</h2>
+      <div class="pick-row">
+        <label for="photoInput" class="btn">Choose photos</label>
+        <input type="file" id="photoInput" accept="image/*" multiple hidden>
+        <button id="folderButton" class="btn secondary" style="display:none">Choose a folder</button>
+      </div>
+      <progress id="progressBar" value="0" max="100" style="display:none"></progress>
+      <p id="status">Loading the search model (the first time takes a minute)...</p>
+    </section>
+
+    <section class="panel">
+      <h2>2. Describe what you remember</h2>
+      <div class="search-row">
+        <input type="text" id="descriptionInput" placeholder="a dog on a couch, sunset at the beach...">
+        <button id="searchButton" class="btn" disabled>Search</button>
+      </div>
+    </section>
+
+    <div id="results"></div>
+
+    <footer>
+      Your photos stay on your device. Nothing is uploaded.
+    </footer>
+
+  </main>
+
+  <script type="module" src="script.js"></script>
+</body>
+</html>
